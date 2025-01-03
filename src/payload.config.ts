@@ -22,7 +22,9 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Products, Categories],
+  // Add collections here \\
+  collections: [Products, Categories, Users, Media],
+  // ---------------------------------------------- \\
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {

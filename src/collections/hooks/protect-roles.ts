@@ -7,9 +7,9 @@ export const protectRoles: FieldHook<{ id: string } & User> = ({
   data,
   req,
 }) => {
-  console.log(data);
   const isAdmin =
-    req.user?.roles?.includes("admin") || data?.email === "danog312@gmail.com";
+    req.user?.roles?.includes("admin") ||
+    data?.email === process.env.SUPER_ADMIN_EMAIL;
 
   if (!isAdmin) {
     return ["user"];

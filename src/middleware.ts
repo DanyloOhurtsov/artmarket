@@ -8,8 +8,6 @@ export function middleware(req: NextRequest): NextResponse | undefined {
     req.headers.get("x-real-ip") ||
     "unknown";
 
-  console.log(ip);
-
   if (req.nextUrl.pathname.startsWith("/admin") && !ALLOWED_IPS.includes(ip)) {
     return NextResponse.redirect(new URL("/", req.url));
   }

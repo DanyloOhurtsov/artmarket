@@ -7,6 +7,10 @@ import { checkRole } from "./access/check-role";
 
 export const Users: CollectionConfig = {
   slug: "users",
+  labels: {
+    singular: "Користувач",
+    plural: "Користувачі",
+  },
   admin: {
     useAsTitle: "email",
   },
